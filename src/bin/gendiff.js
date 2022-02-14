@@ -8,5 +8,7 @@ const program = new Command();
 
 program
     .version(data.version, '-V, --version')
-    .description('Compares two configuration files and shows the difference. Works with .json, .yml and .ini files.')
+    .description('Compares two configuration files and shows a difference.')
+    .option('-f, --format <type>', 'output format')
+    .arguments('<filepath1> <filepath2>')
     .parse(process.argv);
