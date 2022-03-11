@@ -1,7 +1,8 @@
+CLI utility to find the difference between two config files.
 ## Overview
 
-CLI utility to find the difference between two config files.
 [![Actions Status](https://github.com/SZDRAGER/backend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/SZDRAGER/backend-project-lvl2/actions)
+[![linter](https://github.com/SZDRAGER/backend-project-lvl2/actions/workflows/eslint.yml/badge.svg)](https://github.com/SZDRAGER/backend-project-lvl2/actions/workflows/eslint.yml)
 
 ## Features
 
