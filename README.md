@@ -3,7 +3,7 @@ CLI utility to find the difference between two config files.
 
 [![Actions Status](https://github.com/SZDRAGER/backend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/SZDRAGER/backend-project-lvl2/actions)
 [![linter](https://github.com/SZDRAGER/backend-project-lvl2/actions/workflows/eslint.yml/badge.svg)](https://github.com/SZDRAGER/backend-project-lvl2/actions/workflows/eslint.yml)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/e51a6a03dd2afb5f8018/maintainability)](https://codeclimate.com/github/SZDRAGER/backend-project-lvl2/maintainability)
 ## Features
 
 - local install as npm package
