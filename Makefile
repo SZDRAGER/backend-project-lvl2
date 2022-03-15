@@ -11,3 +11,6 @@ lint:
 
 link:
 	npm link
+
+lint-fix:
+	npx eslint --fix .
