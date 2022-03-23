@@ -10,7 +10,8 @@ const getFileContent = (filePath) => {
 
 const compareObjects = (obj1, obj2) => {
   const result = [];
-  const keys = _.union(Object.keys(obj2), Object.keys(obj1));
+  const keys = _.union(Object.keys(obj2), Object.keys(obj1))
+    .sort();
 
   keys.forEach((key) => {
     const value1 = _.get(obj1, key);
@@ -23,8 +24,8 @@ const compareObjects = (obj1, obj2) => {
     } else if (!_.has(obj2, key)) {
       result.push([' -', `${key}:`, value1]);
     } else {
-      result.push([' +', `${key}:`, value2]);
       result.push([' -', `${key}:`, value1]);
+      result.push([' +', `${key}:`, value2]);
     }
   });
 
