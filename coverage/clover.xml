@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648025729972" clover="3.2.0">
-  <project timestamp="1648025729972" name="All files">
+<coverage generated="1648111765007" clover="3.2.0">
+  <project timestamp="1648111765008" name="All files">
     <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="5" elements="35" coveredelements="35" complexity="0" loc="24" ncloc="24" packages="1" files="2" classes="2"/>
     <file name="index.js" path="/home/drager/coding/backend-project-lvl2/src/index.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
