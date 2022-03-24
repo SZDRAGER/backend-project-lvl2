@@ -4,6 +4,7 @@ CLI utility to find the difference between two config files.
 [![Actions Status](https://github.com/SZDRAGER/backend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/SZDRAGER/backend-project-lvl2/actions)
 [![NodeCI](https://github.com/SZDRAGER/backend-project-lvl2/actions/workflows/NodeCI.yml/badge.svg)](https://github.com/SZDRAGER/backend-project-lvl2/actions/workflows/NodeCI.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e51a6a03dd2afb5f8018/maintainability)](https://codeclimate.com/github/SZDRAGER/backend-project-lvl2/maintainability)
+[![test coverage](https://api.codeclimate.com/v1/badges/e51a6a03dd2afb5f8018/test_coverage)](https://codeclimate.com/github/SZDRAGER/backend-project-lvl2/test_coverage)
 ## Features
 
 - local install as npm package
