@@ -1,12 +1,4 @@
-import path from 'path';
-import fs from 'fs';
 import _ from 'lodash';
-
-const getFileContent = (filePath) => {
-  const fullPath = path.resolve(process.cwd(), filePath);
-  const data = fs.readFileSync(fullPath, 'utf8');
-  return data;
-};
 
 const compareObjects = (obj1, obj2) => {
   const result = [];
@@ -34,4 +26,4 @@ ${result.map((e) => e.join(' ')).join('\n')}
 }`;
 };
 
-export { getFileContent, compareObjects };
+export default compareObjects;
