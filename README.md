@@ -91,4 +91,8 @@ $ gendiff "./before.json" "./after.json"
 
 #### genDiff example for JSON files
 
-<a href="https://asciinema.org/a/XFwCjgvbYNJjYJLqD9y1I24v9" target="_blank"><img src="https://asciinema.org/a/XFwCjgvbYNJjYJLqD9y1I24v9.svg" /></a>
+<a href="https://asciinema.org/a/6V04ZG8mw9EpM2UNv3lx7jDU3" target="_blank"><img src="https://asciinema.org/a/6V04ZG8mw9EpM2UNv3lx7jDU3.svg" /></a>
+
+#### genDiff example for YML files
+
+<a href="https://asciinema.org/a/7mqCXrc2degXBZaTo5jhHc3uV" target="_blank"><img src="https://asciinema.org/a/7mqCXrc2degXBZaTo5jhHc3uV.svg" /></a>
