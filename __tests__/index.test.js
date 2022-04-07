@@ -29,31 +29,3 @@ describe.each(formats)('Test genDiff', (format) => {
     expect(() => { JSON.parse(genDiff(path1, path2, 'json')); }).not.toThrow();
   });
 });
-
-/* const expectedValue = readFile('expected.txt');
-const expectedDeepValue = readFile('expected_nested.txt');
-
-test('genDiffForJson', () => {
-  const data1 = getFixturePath('before.json');
-  const data2 = getFixturePath('after.json');
-  expect(genDiff(data1, data2)).toEqual(expectedValue);
-});
-
-test('genDiffForYml', () => {
-  const data1 = getFixturePath('before.yml');
-  const data2 = getFixturePath('after.yml');
-  expect(genDiff(data1, data2)).toEqual(expectedValue);
-});
-
-test('genDiffForNestedJson', () => {
-  const data1 = getFixturePath('before_nested.json');
-  const data2 = getFixturePath('after_nested.json');
-  expect(genDiff(data1, data2)).toEqual(expectedDeepValue);
-});
-
-test('genDiffForNestedYML', () => {
-  const data1 = getFixturePath('before_nested.yml');
-  const data2 = getFixturePath('after_nested.yml');
-  expect(genDiff(data1, data2)).toEqual(expectedDeepValue);
-});
- */
