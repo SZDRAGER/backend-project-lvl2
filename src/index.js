@@ -1,39 +1,79 @@
+import fs from 'fs';
 import _ from 'lodash';
 import path from 'path';
-import { getDataFromYml, getDataFromJson } from './parsers.js';
 
-const compareObjects = (obj1, obj2) => {
-  const result = [];
-  const keys = _.union(Object.keys(obj2), Object.keys(obj1))
-    .sort();
+import format from './formatters/index.js';
+import parse from './parsers.js';
 
-  keys.forEach((key) => {
-    const value1 = _.get(obj1, key);
-    const value2 = _.get(obj2, key);
+const buildTree = (data1, data2) => {
+  const keys = _.union(_.keys(data1), _.keys(data2));
+  const allSortedKeys = _.sortBy(keys);
 
-    if (value1 === value2) {
-      result.push(['  ', `${key}:`, value1]);
-    } else if (!_.has(obj1, key)) {
-      result.push([' +', `${key}:`, value2]);
-    } else if (!_.has(obj2, key)) {
-      result.push([' -', `${key}:`, value1]);
-    } else {
-      result.push([' -', `${key}:`, value1]);
-      result.push([' +', `${key}:`, value2]);
+  const result = allSortedKeys.map((key) => {
+    if (!_.has(data1, key)) {
+      return {
+        key,
+        type: 'added',
+        value: data2[key],
+      };
     }
+
+    if (_.has(data1, key) && !_.has(data2, key)) {
+      return {
+        key,
+        type: 'removed',
+        value: data1[key],
+      };
+    }
+
+    if (_.isPlainObject(data1[key]) && _.isPlainObject(data2[key])) {
+      return {
+        key,
+        type: 'object',
+        children: buildTree(data1[key], data2[key]),
+      };
+    }
+
+    if (!_.isEqual(data1[key], data2[key])) {
+      return {
+        key,
+        type: 'changed',
+        value1: data1[key],
+        value2: data2[key],
+      };
+    }
+
+    return {
+      key,
+      type: 'unchanged',
+      value: data2[key],
+    };
   });
 
-  return `{
-${result.map((e) => e.join(' ')).join('\n')}
-}`;
+  return result;
 };
 
-const genDiff = (filePath1, filePath2) => {
-  const fileContent1 = path.extname(filePath1) === '.json' ? getDataFromJson(filePath1) : getDataFromYml(filePath1);
-  const fileContent2 = path.extname(filePath2) === '.json' ? getDataFromJson(filePath2) : getDataFromYml(filePath2);
-  return compareObjects(fileContent1, fileContent2);
+const genDiff = (data1, data2) => ({
+  type: 'root',
+  children: buildTree(data1, data2),
+});
+
+const getFullPath = (filePath) => path.resolve(process.cwd(), filePath);
+
+const showDiff = (filePath1, filePath2, outputFormat = 'stylish') => {
+  const dataOfFile1 = fs.readFileSync(getFullPath(filePath1), 'utf-8');
+  const dataOfFile2 = fs.readFileSync(getFullPath(filePath2), 'utf-8');
+
+  const dataTypeName1 = path.extname(getFullPath(filePath1)).replace('.', '');
+  const dataTypeName2 = path.extname(getFullPath(filePath2)).replace('.', '');
+
+  const parsedData1 = parse(dataOfFile1, dataTypeName1);
+  const parsedData2 = parse(dataOfFile2, dataTypeName2);
+
+  const formattedDiff = genDiff(parsedData1, parsedData2);
+  const diff = format(formattedDiff, outputFormat);
+
+  return diff;
 };
 
-export { compareObjects };
-
-export default genDiff;
+export default showDiff;
