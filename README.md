@@ -104,6 +104,15 @@ $ gendiff "./before.json" "./after.json"
 
 <a href="https://asciinema.org/a/0WL3dG3S0z904mM5Rr9tnEAaN" target="_blank"><img src="https://asciinema.org/a/0WL3dG3S0z904mM5Rr9tnEAaN.svg" /></a>
 
-#### genDiff example of plain format of output
+### Different formats of output:
+#### genDiff example of an output using plain format
+
+<a href="https://asciinema.org/a/UE6SHLdPdxMzrRovoocIGIG5i" target="_blank"><img src="https://asciinema.org/a/UE6SHLdPdxMzrRovoocIGIG5i.svg" /></a>
+
+#### genDiff example of an output using plain format
+
+<a href="https://asciinema.org/a/dVPZ2hVQ1TTA0jcTHuMgGajhr" target="_blank"><img src="https://asciinema.org/a/dVPZ2hVQ1TTA0jcTHuMgGajhr.svg" /></a>
+
+#### genDiff example of an output using json format
 
 <a href="https://asciinema.org/a/dVPZ2hVQ1TTA0jcTHuMgGajhr" target="_blank"><img src="https://asciinema.org/a/dVPZ2hVQ1TTA0jcTHuMgGajhr.svg" /></a>
