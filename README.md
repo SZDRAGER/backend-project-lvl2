@@ -34,7 +34,6 @@ CLI utility to find the difference between two config files.
 
 ```
 $ git clone ...
-$ cd difference-calculator
 $ make install
 $ make publish
 $ npm link
@@ -89,10 +88,18 @@ $ gendiff "./before.json" "./after.json"
 
 ## Asciinema examples:
 
-#### genDiff example for JSON files
+#### genDiff example for plain JSON files
 
 <a href="https://asciinema.org/a/6V04ZG8mw9EpM2UNv3lx7jDU3" target="_blank"><img src="https://asciinema.org/a/6V04ZG8mw9EpM2UNv3lx7jDU3.svg" /></a>
 
-#### genDiff example for YML files
+#### genDiff example for plain YML files
 
 <a href="https://asciinema.org/a/7mqCXrc2degXBZaTo5jhHc3uV" target="_blank"><img src="https://asciinema.org/a/7mqCXrc2degXBZaTo5jhHc3uV.svg" /></a>
+
+#### genDiff example for nested JSON files
+
+<a href="https://asciinema.org/a/19dqLvHdaxh0IakyVPQT6cp1R" target="_blank"><img src="https://asciinema.org/a/19dqLvHdaxh0IakyVPQT6cp1R.svg" /></a>
+
+#### genDiff example for nested YML files
+
+<a href="https://asciinema.org/a/0WL3dG3S0z904mM5Rr9tnEAaN" target="_blank"><img src="https://asciinema.org/a/0WL3dG3S0z904mM5Rr9tnEAaN.svg" /></a>
