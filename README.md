@@ -103,3 +103,7 @@ $ gendiff "./before.json" "./after.json"
 #### genDiff example for nested YML files
 
 <a href="https://asciinema.org/a/0WL3dG3S0z904mM5Rr9tnEAaN" target="_blank"><img src="https://asciinema.org/a/0WL3dG3S0z904mM5Rr9tnEAaN.svg" /></a>
+
+#### genDiff example of plain format of output
+
+<a href="https://asciinema.org/a/dVPZ2hVQ1TTA0jcTHuMgGajhr" target="_blank"><img src="https://asciinema.org/a/dVPZ2hVQ1TTA0jcTHuMgGajhr.svg" /></a>

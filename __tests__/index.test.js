@@ -9,8 +9,29 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-const expectedValue = readFile('expected.txt');
-const expectedDeepValue = readFile('deep_expected.txt');
+const stylishResult = readFile('expected_stylish.txt');
+const plainResult = readFile('expected_plain.txt');
+
+const formats = [
+  'json',
+  'yaml',
+  'yml',
+];
+
+describe.each(formats)('Test genDiff', (format) => {
+  const path1 = getFixturePath(`before.${format}`);
+  const path2 = getFixturePath(`after.${format}`);
+
+  test(`${format}`, () => {
+    expect(genDiff(path1, path2)).toEqual(stylishResult);
+    expect(genDiff(path1, path2, 'stylish')).toEqual(stylishResult);
+    expect(genDiff(path1, path2, 'plain')).toEqual(plainResult);
+    expect(() => { JSON.parse(genDiff(path1, path2, 'json')); }).not.toThrow();
+  });
+});
+
+/* const expectedValue = readFile('expected.txt');
+const expectedDeepValue = readFile('expected_nested.txt');
 
 test('genDiffForJson', () => {
   const data1 = getFixturePath('before.json');
@@ -24,14 +45,15 @@ test('genDiffForYml', () => {
   expect(genDiff(data1, data2)).toEqual(expectedValue);
 });
 
-test('genDiffForDeepJson', () => {
-  const data1 = getFixturePath('before_deep.json');
-  const data2 = getFixturePath('after_deep.json');
+test('genDiffForNestedJson', () => {
+  const data1 = getFixturePath('before_nested.json');
+  const data2 = getFixturePath('after_nested.json');
   expect(genDiff(data1, data2)).toEqual(expectedDeepValue);
 });
 
-test('genDiffForDeepYML', () => {
-  const data1 = getFixturePath('before_deep.yml');
-  const data2 = getFixturePath('after_deep.yml');
+test('genDiffForNestedYML', () => {
+  const data1 = getFixturePath('before_nested.yml');
+  const data2 = getFixturePath('after_nested.yml');
   expect(genDiff(data1, data2)).toEqual(expectedDeepValue);
 });
+ */
